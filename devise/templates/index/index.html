@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'css/logo.png' %}" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+
+        <h1>Hello and Welcome on my first Django website</h1>
+        <p>This Website allow you to follow many devices currency</p>
+        <p>You will fine the exhaustive list of the devices available on https://api.exchangerate.host/latest</p>
+
+        <h2>How to use this feature ?</h2>
+
+        <p>You hust have to use the dynamic url</p>
+        <p>
+            "days=x & currencies=XXX"
+        </p>
+        <p>If it's too hard for you can click on the button below</p>
+
+
+
+        <div class="button-link">
+            <a href="http://127.0.0.1:8000/days=365&currencies=CAD,USD">
+            <input type="button" value="Dashboard - Device" class="btn btn-info" />
+            </a>
+        </div>
+
+        <p>Mathis AKA ellibellule </p>
+
+    </div>
+
+</body>
+
+</html>
