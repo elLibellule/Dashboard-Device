@@ -1,8 +1,10 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard - Devise</title>
+    <link rel="icon" href="{% static 'css/logo.png' %}" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -13,9 +15,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <h1 class="text-light">Dashboard</h1>
-                <h2 class="text-white">Currencies - {{ current_currency }}</h2>
+                <h1 class="text-light">Dashboard - {{ current_currency }}</h1>
                 <h2 class="text-white">Time scale - {{ page_label }}</h2>
+                <a href="{% url 'dashboard' days_range=7 currencies=current_currency %}" class="btn {% if page_label == 'Week'%} btn-info {% else %}btn-secondary {% endif %}">Week</a>
+                <a href="{% url 'dashboard' days_range=30 currencies=current_currency %}" class="btn {% if page_label == 'Month'%} btn-info {% else %}btn-secondary {% endif %}">Month</a>
+                <a href="{% url 'dashboard' days_range=365 currencies=current_currency %}" class="btn {% if page_label == 'Year'%} btn-info {% else %}btn-secondary {% endif %}">Year</a>
             </div>
         </div>
         <div class="row justify-content-cent">

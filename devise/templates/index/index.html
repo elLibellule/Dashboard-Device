@@ -27,8 +27,8 @@
 
 
 
-        <div class="button-link">
-            <a href="http://127.0.0.1:8000/days=365&currencies=CAD,USD">
+        <div>
+            <a href="{% url 'dashboard' days_range=30 currencies='USD' %}">
             <input type="button" value="Dashboard - Device" class="btn btn-info" />
             </a>
         </div>
