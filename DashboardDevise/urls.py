@@ -21,6 +21,5 @@ from devise.views import dashboard, index
 urlpatterns = [
     path("", index, name="index"),
     path("days=<int:days_range>&currencies=<str:currencies>", dashboard, name='dashboard'),
-    path('admin/', admin.site.urls),
 
 ]
